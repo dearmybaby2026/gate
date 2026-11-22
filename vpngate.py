@@ -51,7 +51,7 @@ VPNGATE_MIRROR = os.environ.get(
     "https://raw.githubusercontent.com/fdciabdul/Vpngate-Scraper-API/main/json/data.json",
 )
 # 已部署的 Cloudflare Worker 检测接口 (GET /check?proxyip=host:port, 实测确认)
-WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://check.helei.kdns.fr/check?sstp=vpn:vpn@")
+WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://orange-glitter-8b8d.dearmybaby2026.workers.dev/check?sstp=vpn:vpn@")
 CONCURRENCY = max(1, int(os.environ.get("CHECK_CONCURRENCY", "32")))   # 与 Worker 网页端一致的并发模型
 CHECK_TIMEOUT = float(os.environ.get("CHECK_TIMEOUT", "90"))          # 单请求客户端超时 (秒)
 MAX_CHECK_NODES = int(os.environ.get("MAX_CHECK_NODES", "0"))         # 0=不限; 本地测试可设小值
@@ -460,8 +460,7 @@ EDGE_HOSTS = [
     h.strip()
     for h in os.environ.get(
         "EDGE_HOSTS",
-        "saas.072159.xyz:443,hzytjy.cn:443,ali.nonull.pp.ua:443,auto.dolby.dpdns.org:443,"
-        "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443",
+        "104.20.56.170:443,104.20.57.242:443,104.19.37.194:443,104.18.168.123:443,104.18.242.97:443,104.16.106.14:443,104.24.4.198:443,104.16.123.152:443,104.24.3.133:443,104.24.92.153:443,172.66.198.237:443,172.66.196.135:443,172.66.143.119:443,104.25.245.3:443,172.66.212.33:443,172.66.136.221:443,104.25.250.83:443,172.66.209.189:443,172.66.203.236:443,172.66.214.97:443,104.25.251.23:443,104.21.83.163:443,172.66.195.161:443,172.64.52.235:443,104.25.254.170:443,172.66.200.211:443,172.66.139.119:443,104.21.86.62:443,104.21.82.205:443,172.66.202.17:443,104.21.91.242:443,104.21.85.1:443,172.66.130.253:443,172.66.128.13:443,104.21.80.95:443,104.21.84.134:443,104.25.252.86:443,172.66.134.4:443,172.66.208.241:443,172.66.142.30:443,104.25.240.208:443,104.21.95.9:443,104.25.253.209:443,104.21.94.135:443,172.66.199.191:443,104.25.241.178:443,172.66.210.50:443,104.20.52.108:443,172.66.137.35:443,172.65.225.107:443",
     ).split(",")
     if h.strip()
 ]
@@ -522,8 +521,8 @@ def build_hosts_text(data):
 
 
 # edgetunnel 完整订阅 (vless://) 配置
-EDT_UUID = os.environ.get("EDT_UUID", "90c14586-42a5-4c30-959d-8b36608d67f7")
-EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "ed.xiaolei.qzz.io")
+EDT_UUID = os.environ.get("EDT_UUID", "8890b1ac-5ca9-4f7c-915a-f3eee9168309")
+EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "mute-mouse-7d18.dearmybaby2026.workers.dev")
 EDT_FINGERPRINT = os.environ.get("EDT_FINGERPRINT", "chrome")
 SUB_URL = os.environ.get("SUB_URL", "https://jerylihub.github.io/gate/sub.txt")
 
